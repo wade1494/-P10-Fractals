@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch LevyCurve",
+            "request": "launch",
+            "mainClass": "LevyCurve",
+            "projectName": "usercode_28b51d67"
+        },
+        {
+            "type": "java",
+            "name": "Launch Rectangle",
+            "request": "launch",
+            "mainClass": "Rectangle",
+            "projectName": "usercode_28b51d67"
+        },
+        {
+            "type": "java",
+            "request": "launch",
+            "vmArgs": "--module-path /usr/lib/javafx-sdk-16/lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
