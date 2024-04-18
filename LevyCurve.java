@@ -65,6 +65,11 @@ public class LevyCurve extends JPanel {
             // return void method so that the recursion "unwinds"
             return;
         } else {
+            t.left(45);
+            drawLevy(t, currentDepth + 1);
+            t.right(90);
+            drawLevy(t, currentDepth + 1);
+            t.left(45);
             // Complete the else statement for the recursive case.
             // Use the Lindenmayer system described in the doc.
             // Remember you must do the recursive call with the depth
@@ -78,7 +83,7 @@ public class LevyCurve extends JPanel {
     protected void paintComponent(Graphics g) {
         Turtle turtle = new Turtle((Graphics2D) g, getBounds());
         turtle.setHeadingMode(Turtle.DEGREE);
-        turtle.setxy(-100,100);
+        turtle.setxy(-150,-150);
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, f.getWidth(), f.getHeight());
         turtle.changeColor(Color.white);

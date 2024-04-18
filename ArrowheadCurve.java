@@ -53,8 +53,11 @@ public class ArrowheadCurve extends JPanel {
 			// Base Case
 			return;
 		} else {
-			if (isX) {
-			
+			if (isX) 
+			{
+				turtle.forward();
+				turtle.left(60);
+				
 			} else {
 				
 			}
