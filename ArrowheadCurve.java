@@ -51,14 +51,33 @@ public class ArrowheadCurve extends JPanel {
 	public void drawArrowhead(int currentDepth, Turtle turtle, boolean isX) {
 		if (currentDepth == this.maxRecursiveDepth) {
 			// Base Case
+			pickColor(turtle);
 			return;
-		} else {
+		} 
+		else 
+		{
 			if (isX) 
 			{
-				turtle.forward();
+				drawArrowhead(currentDepth+1, turtle, false);
+				turtle.forward(1);
 				turtle.left(60);
 				
-			} else {
+				drawArrowhead(currentDepth+1, turtle, true);
+				turtle.forward(1);
+				turtle.left(60);
+				
+				drawArrowhead(currentDepth+1, turtle, false);
+			} 
+			else 
+			{
+				drawArrowhead(currentDepth+1, turtle, true);
+				turtle.forward(1);
+				turtle.right(60);
+				
+				drawArrowhead(currentDepth+1, turtle, false);
+				turtle.forward(1);
+				turtle.right(60);
+				drawArrowhead(currentDepth+1, turtle, true);
 				
 			}
 		}
@@ -67,13 +86,16 @@ public class ArrowheadCurve extends JPanel {
 
     protected void paintComponent(Graphics g) {
         Turtle turtle = new Turtle((Graphics2D) g, getBounds());
-        turtle.setHeadingMode(Turtle.DEGREE);
-		turtle.changeColor(Color.white);
+		
+        turtle.setHeadingMode(2);
+		turtle.setHeading(120);
+		turtle.changeColor(Color.red);
 
         g.setColor(Color.BLACK);
-        g.fillRect(0, 0, 1500, 1000);
+        g.fillRect(-150, -200, 5000, 5000);
 
 		drawArrowhead(0, turtle, true);
+		turtle.forward(1);
     }
 
     public static void main(String[] args) {
