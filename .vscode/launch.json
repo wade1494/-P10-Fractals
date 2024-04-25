@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ZOrderCurve",
+            "request": "launch",
+            "mainClass": "ZOrderCurve",
+            "projectName": "-P10-Fractals_f32b0a0d"
+        },
+        {
+            "type": "java",
+            "name": "GosperCurve",
+            "request": "launch",
+            "mainClass": "GosperCurve",
+            "projectName": "-P10-Fractals_f32b0a0d"
+        },
+        {
+            "type": "java",
+            "name": "FractalChoice",
+            "request": "launch",
+            "mainClass": "FractalChoice",
+            "projectName": "-P10-Fractals_f32b0a0d"
+        },
+        {
+            "type": "java",
             "name": "LevyCurve",
             "request": "launch",
             "mainClass": "LevyCurve",
