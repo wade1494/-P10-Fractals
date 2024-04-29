@@ -2,5 +2,6 @@
     "java.project.referencedLibraries": [
         "/usr/lib/javafx-sdk-16/lib/**/*.jar",
         "turtle.jar"
-    ]
+    ],
+    "java.debug.settings.onBuildFailureProceed": true
 }

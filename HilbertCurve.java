@@ -10,9 +10,9 @@ import javax.swing.JScrollPane;
 
 import com.lrdev.turtle.Turtle;
 
-public class ZOrderCurve extends JPanel {
+public class HilbertCurve extends JPanel {
     private int maxRecursiveDepth;
-    public ZOrderCurve(int _maxRecursiveDepth) {
+    public HilbertCurve(int _maxRecursiveDepth) {
         this.maxRecursiveDepth = _maxRecursiveDepth;
 		JFrame f = new JFrame();
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -34,8 +34,7 @@ public class ZOrderCurve extends JPanel {
             t.changeColor(Color.GREEN);
         }
     }
-    // 
-    public void zOrderCurve(int currentDepth, Turtle turtle, boolean isX)
+    public void hilbertCurve(int currentDepth, Turtle turtle, boolean isX)
     {
         if (currentDepth == this.maxRecursiveDepth) {
 			// Base Case
@@ -46,23 +45,35 @@ public class ZOrderCurve extends JPanel {
         {
             if (isX)
             {
-                zOrderCurve(currentDepth+1, turtle, true);
-                turtle.left(45);
-                turtle.forward(10);
-                zOrderCurve(currentDepth+1, turtle, true);
-                turtle.right(45);
-                turtle.forward(10);
-                zOrderCurve(currentDepth+1, turtle, false);
+                turtle.left(90);
+                hilbertCurve(currentDepth + 1, turtle, false);
+                turtle.forward(3);
+                turtle.left(90);
+                hilbertCurve(currentDepth + 1, turtle, true);
+                turtle.forward(3);
+                hilbertCurve(currentDepth + 1, turtle, true);
+                turtle.left(90);
+                turtle.forward(3);
+                hilbertCurve(currentDepth + 1, turtle, false);
+                turtle.left(90);
             }
             else
             {
-                
+                turtle.right(90);
+                hilbertCurve(currentDepth + 1, turtle, true);
+                turtle.forward(3);
+                turtle.right(90);
+                hilbertCurve(currentDepth + 1, turtle, false);
+                turtle.forward(3);
+                hilbertCurve(currentDepth + 1, turtle, false);
+                turtle.right(90);
+                turtle.forward(3);
+                hilbertCurve(currentDepth + 1, turtle, true);
+                turtle.right(90);
             }
-            
         }
     }
-    // What fractal are you drawing? Comment below
-    // DragonCurve
+    // What fractal are you drawing? Comment belo
 
     protected void paintComponent(Graphics g) {
         Turtle turtle = new Turtle((Graphics2D) g, getBounds());
@@ -70,11 +81,10 @@ public class ZOrderCurve extends JPanel {
 
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, 3000, 3000);
-        zOrderCurve(0, turtle);
-
+        hilbertCurve(0, turtle, true);
     }
 
     public static void main(String[] args) {
-        new ZOrderCurve(Integer.parseInt(JOptionPane.showInputDialog(null, "Max recursive depth?")));
+        new HilbertCurve(Integer.parseInt(JOptionPane.showInputDialog(null, "Max recursive depth?")));
     }
 }

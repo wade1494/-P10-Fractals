@@ -2,10 +2,38 @@
     "configurations": [
         {
             "type": "java",
-            "name": "ZOrderCurve",
+            "name": "FractalMilestone5",
             "request": "launch",
-            "mainClass": "ZOrderCurve",
-            "projectName": "-P10-Fractals_f32b0a0d"
+            "mainClass": "FractalMilestone5",
+            "projectName": "-P10-Fractals_e3f90557"
+        },
+        {
+            "type": "java",
+            "name": "ArrowheadCurve",
+            "request": "launch",
+            "mainClass": "ArrowheadCurve",
+            "projectName": "-P10-Fractals_e3f90557"
+        },
+        {
+            "type": "java",
+            "name": "DragonCurve",
+            "request": "launch",
+            "mainClass": "DragonCurve",
+            "projectName": "-P10-Fractals_e3f90557"
+        },
+        {
+            "type": "java",
+            "name": "LevyCurve",
+            "request": "launch",
+            "mainClass": "LevyCurve",
+            "projectName": "-P10-Fractals_e3f90557"
+        },
+        {
+            "type": "java",
+            "name": "HilbertCurve",
+            "request": "launch",
+            "mainClass": "HilbertCurve",
+            "projectName": "-P10-Fractals_e3f90557"
         },
         {
             "type": "java",
